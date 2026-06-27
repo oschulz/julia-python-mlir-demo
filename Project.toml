@@ -1,0 +1,22 @@
+[deps]
+ADTypes = "47edcb42-4c32-4615-8424-f2b9edc5f35b"
+CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
+CondaPkg = "992eb4ea-22a4-4c89-a5bb-47a3300528ab"
+Enzyme = "7da242da-08ed-463a-9acd-ee780be4f1d9"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+KernelAbstractions = "63c18a36-062a-441e-b654-da1e3ab1ce7c"
+Lux = "b2108857-7c20-44ae-9111-449ecde12c47"
+MLDataDevices = "7e8f7934-dd98-4c1a-8fe8-92b47a384d40"
+MLUtils = "f1d291b0-491e-4a28-83b9-f70985020b54"
+Optimisers = "3bd65402-5787-11e9-1adc-39752487f4e2"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+PreferenceTools = "ba661fbb-e901-4445-b070-854aec6bfbc5"
+Preferences = "21216c6a-2e73-6563-6e65-726566657250"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+PythonCall = "6099a3de-0909-46bc-b1f4-468b9a2dfc0d"
+Reactant = "3c362404-f566-11ee-1572-e11a4b42c853"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+
+[extras]
+CUDA_Runtime_jll = "76a88914-d11a-5bdc-97e0-2f5a05c973a2"

@@ -1,0 +1,37 @@
+### Julia ###
+
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+.CondaPkg
+
+### Python ###
+
+__pycache__
+*.pyc
+.pixi
+
+
+### Visual Studio Code ###
+
+.vscode
+
+
+### Jupyter ###
+
+.ipynb_checkpoints
+
+
+### LLVM ###
+
+*.mlir
+
+
+
+### Claude ###
+CLAUDE.local.md
+.claude/settings.local.json
+
+
+### OS-X ###
+.DS_Store

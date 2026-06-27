@@ -1,0 +1,21 @@
+[deps]
+python = ">=3.12"
+numpy = ""
+ipykernel = "<7"
+matplotlib = ""
+ipympl = ""
+
+[pip.deps]
+# Matched pair: enzyme-ad 0.0.14 currently works only with jax/jaxlib 0.8.2
+# (the version in its builddeps lock), so enzyme_ad.jax.hlo_call + jax.grad
+# work.
+"enzyme-ad" = "==0.0.14"
+jaxlib = "==0.8.2"
+
+[pip.deps.jax]
+version = "==0.8.2"
+extras = ["cuda12-local"]  # Disable this to not use system CUDA.
+
+[pip.deps.tensorflow]
+version = ">= 2.17"
+# extras = ["and-cuda"]  # Enable this to not use system CUDA.
