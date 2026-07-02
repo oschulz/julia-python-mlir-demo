@@ -1,6 +1,7 @@
 include("common.jl")   # caps GPU memory, then defines save_mlir / load_mlir
 
 using Enzyme: Enzyme
+import ForwardDiff
 
 x = Float32[1, 2, 3]
 rx = to_rarray(x)
@@ -16,6 +17,8 @@ negsumsq(x)
 
 @code_llvm negsumsq(x)
 save_llvm("negsumsq.ll", negsumsq, x)
+
+ForwardDiff.gradient(negsumsq, x)
 
 @code_hlo optimize=false negsumsq(rx)
 @code_hlo negsumsq(rx)
