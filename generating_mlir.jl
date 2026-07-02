@@ -15,6 +15,7 @@ include("userfuncs.jl")
 negsumsq(x)
 
 @code_llvm negsumsq(x)
+save_llvm("negsumsq.ll", negsumsq, x)
 
 @code_hlo optimize=false negsumsq(rx)
 @code_hlo negsumsq(rx)

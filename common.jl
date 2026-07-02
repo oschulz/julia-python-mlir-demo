@@ -1,6 +1,7 @@
 ENV["XLA_REACTANT_GPU_MEM_FRACTION"] = "0.18"   # cap GPU memory before the first `using Reactant`
 
 using Reactant: Reactant, XLA, @code_hlo, @jit, to_rarray
+using InteractiveUtils: code_llvm
 
 """
     save_mlir(path, f, args...; optimize=true)
@@ -20,6 +21,19 @@ common.py's `load_mlir_enzyme` — see its docstring.
 """
 function save_mlir(path, f, args...; optimize::Bool=true)
     code = optimize ? string(@code_hlo f(args...)) : string(@code_hlo optimize=false f(args...))
+    write(path, code)
+    return nothing
+end
+
+"""
+    save_llvm(path, f, args...; optimize=true)
+
+Compile `f(args...)` to native-code LLVM IR with `code_llvm` and write the text to
+`path` (conventionally a `.ll` file). Plain Julia/LLVM, not Reactant/MLIR — useful to
+contrast against `save_mlir`'s StableHLO output for the same function.
+"""
+function save_llvm(path, f, args...; optimize::Bool=true)
+    code = sprint(io -> code_llvm(io, f, Base.typesof(args...); optimize))
     write(path, code)
     return nothing
 end
