@@ -27,6 +27,13 @@ __pycache__
 *.mlir
 
 
+### Generated demo artifacts ###
+
+# TensorFlow SavedModels + initial-state CSVs from saving_tensorflow.jl
+*_savedmodel/
+affine_*.csv
+
+
 
 ### Claude ###
 CLAUDE.local.md
