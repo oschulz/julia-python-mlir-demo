@@ -9,9 +9,13 @@ list(x.devices())
 
 jax.jit(jnp.sum).lower(x).as_text()
 
+# jaxpr: JAX's typed IR, one level above StableHLO
+jax.make_jaxpr(jnp.sum)(x)
+
 
 from userfuncs import negsumsq
 
-jax.jit(negsumsq).lower(x).as_text()
+jax.make_jaxpr(negsumsq)(x)           # jaxpr: integer_pow, reduce_sum, neg
+jax.jit(negsumsq).lower(x).as_text()  # ... then lowered to StableHLO
 
 save_mlir("negsumsq_jax.mlir", negsumsq, x)
