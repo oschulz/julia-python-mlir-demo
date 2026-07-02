@@ -8,6 +8,8 @@ rx = to_rarray(x)
 
 XLA.device(rx)
 
+@jit sum(rx)
+
 @code_hlo sum(rx)
 
 

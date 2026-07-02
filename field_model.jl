@@ -68,7 +68,7 @@ plot(sqrt_power_spectrum(m)[begin,:])
 
 ξ_truth = sample_prior(m)  # Dummy ground truth drawn from latent prior
 
-λ_truth = f_expectation(m, ξ_truth)  # Expected data (Poisson rate) at ξ_truth
+λ_truth = m(ξ_truth)  # Expected data (Poisson rate) at ξ_truth
 heatmap(λ_truth)
 
 poisson_fi_diag(rates::AbstractArray) = 1f0 ./ rates  # Diagonal of Poisson Fisher information
